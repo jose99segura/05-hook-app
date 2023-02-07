@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Message } from "./Message";
 
 
 export const SimpleForm = () => {
@@ -20,12 +21,14 @@ export const SimpleForm = () => {
     }
 
     useEffect( () =>  {
-        console.log("formState username ha cambiado");
+        // console.log("formState username ha cambiado");
     }, [username]);
 
     useEffect( () =>  {
-        console.log("formState email ha cambiado");
+        // console.log("formState email ha cambiado");
     }, [email]);
+
+
 
     return (
         <>
@@ -49,6 +52,10 @@ export const SimpleForm = () => {
                 onChange = { onInputChange }
             />
 
+            {
+              (username === 'jose99segura') && <Message/>
+            }
+            
 
         </>
     )
